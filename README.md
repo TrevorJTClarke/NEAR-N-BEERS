@@ -2,7 +2,7 @@
 <br />
 
 <p>
-<img src="https://near.org/wp-content/themes/near-19/assets/img/neue/logo.svg?t=1600963474" width="240">
+<img src="./src/assets/logo.png" width="240">
 </p>
 
 <br />
