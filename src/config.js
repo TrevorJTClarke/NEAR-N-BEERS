@@ -1,8 +1,8 @@
 function getConfig(env, options = {}) {
     const config = {
         ...options,
-        appTitle: options.appTitle || 'NEAR',
-        contractName: options.contractName || process.env.CONTRACT_NAME || 'test.near',
+        // appTitle: options.appTitle || 'NEAR',
+        contractName: options.contractName || process.env.CONTRACT_NAME || 'dev-1611343002027',
     }
 
     switch (env) {
@@ -12,7 +12,7 @@ function getConfig(env, options = {}) {
                 ...config,
                 networkId: 'mainnet',
                 nodeUrl: 'https://rpc.mainnet.near.org',
-                explorerUrl: 'https://explorer.near.org',
+                // explorerUrl: 'https://explorer.near.org',
                 walletUrl: 'https://wallet.near.org',
                 helperUrl: 'https://helper.mainnet.near.org'
             }
@@ -22,7 +22,7 @@ function getConfig(env, options = {}) {
                 ...config,
                 networkId: 'default',
                 nodeUrl: 'https://rpc.testnet.near.org',
-                explorerUrl: 'https://explorer.testnet.near.org',
+                // explorerUrl: 'https://explorer.testnet.near.org',
                 walletUrl: 'https://wallet.testnet.near.org',
                 helperUrl: 'https://helper.testnet.near.org'
             }
@@ -31,7 +31,7 @@ function getConfig(env, options = {}) {
                 ...config,
                 networkId: 'betanet',
                 nodeUrl: 'https://rpc.betanet.near.org',
-                explorerUrl: 'https://explorer.betanet.near.org',
+                // explorerUrl: 'https://explorer.betanet.near.org',
                 walletUrl: 'https://wallet.betanet.near.org',
                 helperUrl: 'https://helper.betanet.near.org'
             }
