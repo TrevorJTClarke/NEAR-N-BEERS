@@ -1,0 +1,32 @@
+{
+  "name": "voting-app",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "npm run build:contract && npm run build:web",
+    "build:contract": "node ./contract/build",
+    "build:web": "parcel build src/index.html --public-url ./",
+    "dev:deploy:contract": "near dev-deploy --wasmFile ./contract/res/voting_app.wasm",
+    "deploy:contract": "near deploy --wasmFile ./contract/res/voting_app.wasm",
+    "deploy:pages": "gh-pages -d dist/",
+    "deploy": "npm run build && npm run deploy:contract && npm run deploy:pages",
+    "prestart": "npm run build:contract && npm run dev:deploy:contract",
+    "start": "env-cmd -f ./neardev/dev-account.env parcel src/index.html",
+    "dev": "NODE_ENV=development && nodemon --watch assembly -e ts --exec \"npm run start\"",
+    "test": "cd contract && cargo test --package status-message -- --nocapture"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "gh-pages": "^2.2.0",
+    "gulp": "^4.0.2",
+    "jest": "^25.1.0",
+    "jest-environment-node": "^24.9.0",
+    "near-shell": "^0.20.8",
+    "nodemon": "^2.0.2",
+    "parcel-bundler": "^1.12.4",
+    "shelljs": "^0.8.3"
+  },
+  "dependencies": {
+    "near-api-js": "^0.23.2",
+    "regenerator-runtime": "^0.13.3"
+  }
+}
