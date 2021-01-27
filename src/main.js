@@ -5,7 +5,8 @@ import getConfig from "./config"
 
 const BN = require('bn.js');
 
-let nearConfig = getConfig(process.env.NODE_ENV || "development");
+// Default to testnet for now
+let nearConfig = getConfig("development");
 window.nearConfig = nearConfig;
 
 // Initializing contract
